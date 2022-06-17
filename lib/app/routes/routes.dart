@@ -1,0 +1,1 @@
+export 'package:app_studies/presenters/home/ui/home_view.dart';
