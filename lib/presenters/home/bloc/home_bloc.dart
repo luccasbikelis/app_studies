@@ -1,22 +1,14 @@
 import 'dart:async';
 
-import 'package:app_studies/features/home/domain/entities/pokemon.dart';
-import 'package:app_studies/features/home/domain/usecase/pokemon_usecase.dart';
-
 class HomeBloc {
-  final PokemonUseCase pokemonUseCase;
+  final StreamController<int> _controller = StreamController();
+  get stream => _controller.stream;
 
-  HomeBloc(this.pokemonUseCase);
-
-  final StreamController<Pokemon> resultController = StreamController();
-  Stream<Pokemon> get resultStream => resultController.stream;
-
-  loadResults() async {
-    final result = await pokemonUseCase();
-    resultController.add(result);
+  updatePage(int newPage) {
+    _controller.sink.add(newPage);
   }
 
   dispose() {
-    resultController.close();
+    _controller.close();
   }
 }

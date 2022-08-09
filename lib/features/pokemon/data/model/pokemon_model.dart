@@ -1,12 +1,12 @@
 import 'package:app_studies/base/model/model.dart';
-import 'package:app_studies/features/home/domain/entities/pokemon.dart';
+import 'package:app_studies/features/pokemon/domain/entities/pokemon.dart';
 
 class PokemonModel extends Pokemon implements Model {
   PokemonModel(
-      List<String> abilities,
+      List<dynamic> abilities,
       String detailPageURL,
       int weight,
-      List<String> weakness,
+      List<dynamic> weakness,
       String number,
       int height,
       String collectiblesSlug,
@@ -17,7 +17,7 @@ class PokemonModel extends Pokemon implements Model {
       String thumbnailAltText,
       String thumbnailImage,
       int id,
-      List<String> type)
+      List<dynamic> type)
       : super(
             abilities,
             detailPageURL,
@@ -77,22 +77,22 @@ class PokemonModel extends Pokemon implements Model {
     );
   }
 
-  factory PokemonModel.copy(PokemonModel pokemonModel) {
+  factory PokemonModel.copy(Pokemon pokemon) {
     return PokemonModel(
-        pokemonModel.abilities,
-        pokemonModel.detailPageURL,
-        pokemonModel.weight,
-        pokemonModel.weakness,
-        pokemonModel.number,
-        pokemonModel.height,
-        pokemonModel.collectiblesSlug,
-        pokemonModel.featured,
-        pokemonModel.slug,
-        pokemonModel.description,
-        pokemonModel.name,
-        pokemonModel.thumbnailAltText,
-        pokemonModel.thumbnailImage,
-        pokemonModel.id,
-        pokemonModel.type);
+        pokemon.abilities,
+        pokemon.detailPageURL,
+        pokemon.weight,
+        pokemon.weakness,
+        pokemon.number,
+        pokemon.height,
+        pokemon.collectiblesSlug,
+        pokemon.featured,
+        pokemon.slug,
+        pokemon.description,
+        pokemon.name,
+        pokemon.thumbnailAltText,
+        pokemon.thumbnailImage,
+        pokemon.id,
+        pokemon.type);
   }
 }

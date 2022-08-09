@@ -1,8 +1,8 @@
 class Pokemon {
-  final List<String> abilities;
+  final List<dynamic> abilities;
   final String detailPageURL;
   final int weight;
-  final List<String> weakness;
+  final List<dynamic> weakness;
   final String number;
   final int height;
   final String collectiblesSlug;
@@ -13,7 +13,7 @@ class Pokemon {
   final String thumbnailAltText;
   final String thumbnailImage;
   final int id;
-  final List<String> type;
+  final List<dynamic> type;
 
   Pokemon(
       this.abilities,
